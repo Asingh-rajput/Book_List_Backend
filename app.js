@@ -10,11 +10,12 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use("/books", router); // localhost:5000/books
+Mongo_URL="mongodb+srv://root:Ashutosh@cluster0.5tscpdi.mongodb.net/test"
 
 
 
 mongoose
-  .connect("mongodb+srv://root:Ashutosh@cluster0.5tscpdi.mongodb.net/test")
+  .connect(Mongo_URL)
   .then(() => console.log("Connected To Database"))
   .then(() => {
     app.listen(8080, () => console.log("Server is running on port 8080"));
